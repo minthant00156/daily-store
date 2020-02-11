@@ -146,6 +146,24 @@ function handleMessage(sender_psid, received_message) {
     ]
     }
   }
+  if (received_message.text === "test") {
+    response = {
+      "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to do next?",
+        "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://www.messenger.com",
+            "title":"Visit Messenger"
+          }
+          ]
+        }
+      }
+    }
+  }
   else if (received_message.text == "hello") {
     response = {
       "text":'Hello..Min Ga Lar Par Shint. What can I help You?'
