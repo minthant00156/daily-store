@@ -5,9 +5,16 @@ const
   request = require('request'),
   express = require('express'),
   body_parser = require('body-parser'),
-  app = express().use(body_parser.json()); // creates express http server
+  app = express().use(body_parser.json());
+var admin = require("firebase-admin");
 
+var ServiceAccount = require("./ServiceAccount.json");
 
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://the-daily-store-60ea9.firebaseio.com"
+})
+var db=admin.firestore();
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
@@ -315,7 +322,7 @@ const electronic = (sender_psid) => {
         "template_type": "generic",
         "elements": [{
             "title": "Headphone",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/NyJj3PY.jpg",
             "subtitle": "point - 50",
             "buttons": [{
               "type": "postback",
@@ -325,7 +332,7 @@ const electronic = (sender_psid) => {
           },
           {
             "title": "Earphone",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/xYD02vl.jpg",
             "subtitle": "point - 30",
             "buttons": [{
               "type": "postback",
@@ -335,7 +342,7 @@ const electronic = (sender_psid) => {
           },
           {
             "title": "Power Bank",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/UojaGG7.jpg",
             "subtitle": "point - 45",
             "buttons": [{
               "type": "postback",
@@ -345,7 +352,7 @@ const electronic = (sender_psid) => {
           },
           {
             "title": "Table Lamp",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/PxLFwAJ.jpg",
             "subtitle": "point - 60",
             "buttons": [{
               "type": "postback",
@@ -355,7 +362,7 @@ const electronic = (sender_psid) => {
           },
           {
             "title": "Digital Table Watch",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/DrquX82.jpg",
             "subtitle": "point - 100",
             "buttons": [{
               "type": "postback",
@@ -365,7 +372,7 @@ const electronic = (sender_psid) => {
           },
           {
             "title": "Digital Watch",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/uZzrltE.jpg",
             "subtitle": "point - 200",
             "buttons": [{
               "type": "postback",
@@ -375,7 +382,7 @@ const electronic = (sender_psid) => {
           },
           {
             "title": "Stand Fan",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/sdVoLrd.jpg",
             "subtitle": "point - 200",
             "buttons": [{
               "type": "postback",
@@ -385,7 +392,7 @@ const electronic = (sender_psid) => {
           },
           {
             "title": "Phone",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/TFQcdTb.jpg",
             "subtitle": "point - 1000",
             "buttons": [{
               "type": "postback",
@@ -395,7 +402,7 @@ const electronic = (sender_psid) => {
           },
           {
             "title": "Flat Tv",
-            "image_url": "https://static-01.shop.com.mm/original/736bd78e8568560a3e4488478afa1262.jpg",
+            "image_url": "https://i.imgur.com/Xpt28x4.jpg",
             "subtitle": "point - 1000",
             "buttons": [{
               "type": "postback",
@@ -453,7 +460,7 @@ const womenClothing = (sender_psid) => {
         "template_type": "generic",
         "elements": [{
             "title": "T shirt",
-            "image_url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/10/16/online-clothes-shops-hero.jpg?w968h681",
+            "image_url": "https://i.imgur.com/jrHH3CS.jpg",
             "subtitle": "point - 20",
             "buttons": [{
               "type": "postback",
